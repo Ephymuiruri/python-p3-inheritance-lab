@@ -3,7 +3,11 @@
 from user import User
 
 import random
-knowledge = [
+
+class Teacher(User):
+    def __init__(self,first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.knowledge =[
     "str is a data type in Python",
     "programming is hard, but it's worth it",
     "JavaScript async web request",
@@ -12,15 +16,8 @@ knowledge = [
     "programming computers hacking learning terminal",
     "pipenv install pipenv shell",
     "pytest -x flag to fail fast",
-]
-
-class Teacher(User):
-    def __init__(self,first_name, last_name,knowledge):
-        super().__init__(first_name, last_name)
-        self.knowledge = knowledge
+     ]
 
     def teach(self):
-        pass
-        
-    def teach(self):
-        pass
+        statement=self.knowledge[random.randint(0,len(self.knowledge)-1)]
+        return statement
